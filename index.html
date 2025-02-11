@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- CSS bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- CSS style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- CSS Media -->
+     <link rel="stylesheet" href="./css/media.css">
+  </head>
+  <body>
+    <!-- start header -->
+    <header>
+      <div
+        class="container main-content d-flex flex-column justify-content-center"
+      >
+        <!-- start title -->
+        <h1>Bookmarker</h1>
+        <hr />
+        <div class="d-flex justify-content-center Second-title">
+          <i class="fa-solid fa-bookmark fs-3 p-2 Second-title-icon"></i>
+          <h2>Bookmark your favorite sites</h2>
+          <i class="fa-solid fa-bookmark fs-3 p-2 Second-title-icon"></i>
+        </div>
+        <!-- end title -->
+
+        <!-- start inputs -->
+        <div class="mb-3 text-start">
+          <label for="siteName" class="form-label fw-bold"
+            ><i class="fa-solid fa-book px-1"></i>Site Name</label
+          >
+          <input
+            oninput="Validation(this)"
+            type="text"
+            class="form-control"
+            id="siteName"
+            placeholder="Bookmark Name"
+            autocomplete="off"
+          />
+        </div>
+        <div class="mb-3 text-start">
+          <label for="siteUrl" class="form-label fw-bold"
+            ><i class="fa-solid fa-link px-1"></i> Site URL</label
+          >
+          <input
+            oninput="Validation(this)"
+            type="text"
+            class="form-control"
+            id="siteUrl"
+            placeholder="Website URL"
+            autocomplete="off"
+          />
+        </div>
+        <button onclick="addSite()" type="submit" class="submit">Submit</button>
+        <button onclick="setUpdate()" type="submit" class="update d-none">Update</button>
+        <!-- end inputs -->
+
+        <!-- start table -->
+        <hr />
+        <div class="show-table bg-light">
+          <div class="row py-2 border-bottom m-auto">
+            <div class="col-1 fw-bold title">Index</div>
+            <div class="col-2 fw-bold title">Website Name</div>
+            <div class="col-3 fw-bold title">Visit</div>
+            <div class="col-3 fw-bold title">Update</div>
+            <div class="col-3 fw-bold title">Delete</div>
+          </div>
+          <div class="Section" id="visit-row"></div>
+        </div>
+
+        <!-- end table -->
+      </div>
+    </header>
+    <!-- end header -->
+    <div class="alert-massege" id="msg-alert">
+      <div class="box">
+        <div class="icons">
+          <div class="redI"></div>
+          <div class="yellwoI"></div>
+          <div class="greenI"></div>
+        </div>
+
+        <div class="alert-content">
+          <p>
+            Site Name or Url is not valid, Please follow <br />
+            the rules below :
+          </p>
+          <div class="massege-icons">
+            <i class="fa-regular fa-circle-right p-2"></i>
+            <p>Site name must contain from 3 to 10 characters</p>
+          </div>
+          <div class="massege-icons">
+            <i class="fa-regular fa-circle-right p-2"></i>
+            <p>Site URL must be a valid one</p>
+          </div>
+        </div>
+        <div>
+          <i
+            class="close fa-solid fa-xmark close fs-3"
+            onclick="closeAlert()"
+          ></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Js -->
+    <script src="js/index.js"></script>
+  </body>
+</html>
